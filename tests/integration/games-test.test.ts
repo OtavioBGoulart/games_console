@@ -14,6 +14,11 @@ beforeEach(async () => {
     await prisma.console.deleteMany({})
 })
 
+afterAll(async () => {
+    await prisma.game.deleteMany({})
+    await prisma.console.deleteMany({})
+})
+
 const server = supertest(app);
 
 describe("GET /games", () => {
