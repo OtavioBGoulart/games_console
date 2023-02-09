@@ -75,7 +75,7 @@ describe("POST /consoles", () => {
     })
 
     it("should respond with status 201 when create console was sucessfull", async () => {
-        const nameBody = await consoleBody()
+        const nameBody = consoleBody()
         const response = await server.post("/consoles").send(nameBody);
 
         expect(response.status).toBe(201);
